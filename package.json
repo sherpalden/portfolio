@@ -6,14 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check-types": "tsc --pretty --noEmit",
-    "check-format": "prettier --check .",
-    "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "format": "prettier --write .",
-    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
-    "prepare": "husky install"
+    "lint-staged": "lint-staged",
+    "format": "eslint -c .eslintrc.js --ignore-path .eslintignore --fix",
+    "git-add": "git add .",
+    "prepare": "husky install",
+    "test": "npm run format"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.6.4",
+    "antd": "^4.16.13",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -33,15 +34,14 @@
     "prettier": "^2.3.2",
     "typescript": "^4.3.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "packages/**/*.{js,json,ts,tsx}": [
-      "yarn run test-all",
+    "*.{js,jsx,ts,tsx}": [
+      "yarn stylelint",
+      "yarn format",
       "git add"
     ]
-  }
+  },
+  "pre-commit": [
+    "lint-staged"
+  ]
 }

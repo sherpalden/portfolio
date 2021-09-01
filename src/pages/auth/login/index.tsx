@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Button } from "../../../components/atoms";
 import { FacebookOutlined, GoogleOutlined, GithubOutlined, LinkedinOutlined } from "@ant-design/icons";
-
 const Wrapper = styled.div`
     height: 100vh;
     width: 100%;
@@ -52,32 +51,28 @@ const FormWrapper = styled.div`
     }
 `;
 
-const HandleSignUp = (key: string) => {
-    console.log(key)
-}
-
-const SignUp = () => {
+const Login = () => {
     return (
         <Wrapper>
             <Container>
                 <FormWrapper>
                     <div className="form-title">
-                        Sign Up With
+                        Login Up With
                     </div>
                     <div className="button-list">
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("google")}>
+                        <Button height="45px" background="transparent">
                             <span>Google</span>
                             <GoogleOutlined style={{ fontSize: '24px', color: 'red' }} />
                         </Button>
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("facebook")}>
+                        <Button height="45px" background="transparent">
                             <span>Facebook</span>
                             <FacebookOutlined style={{ fontSize: '24px', color: '#08c' }} />
                         </Button>
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("linkedin")}>
+                        <Button height="45px" background="transparent">
                             <span>Linkedin</span>
                             <LinkedinOutlined style={{ fontSize: '24px', color: 'yellow' }} />
                         </Button>
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("github")}>
+                        <Button height="45px" background="transparent">
                             <span>Github</span>
                             <GithubOutlined style={{ fontSize: '24px', color: 'green' }} />
                         </Button>
@@ -88,4 +83,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default Login;
