@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "../../../components/atoms";
-import { FacebookOutlined, GoogleOutlined, GithubOutlined, LinkedinOutlined } from "@ant-design/icons";
+import { FacebookOutlined, GithubOutlined, LinkedinOutlined } from "@ant-design/icons";
+import { FacebookAuth, GithubAuth, GoogleAuth, LinkedinAuth } from "../../../components/molecules";
 
 const Wrapper = styled.div`
     height: 100vh;
@@ -32,19 +33,6 @@ const FormWrapper = styled.div`
         color: white;
     }
     .button-list {
-        & button {
-            border: 1px solid white;
-            border-radius: 100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            &:hover {
-                cursor: pointer;
-                background: black;
-                border: 1px solid green;
-                border-radius: 100px;
-            }
-        }
         margin-top: 18px;
         display: flex;
         gap: 18px;
@@ -65,22 +53,10 @@ const SignUp = () => {
                         Sign Up With
                     </div>
                     <div className="button-list">
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("google")}>
-                            <span>Google</span>
-                            <GoogleOutlined style={{ fontSize: '24px', color: 'red' }} />
-                        </Button>
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("facebook")}>
-                            <span>Facebook</span>
-                            <FacebookOutlined style={{ fontSize: '24px', color: '#08c' }} />
-                        </Button>
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("linkedin")}>
-                            <span>Linkedin</span>
-                            <LinkedinOutlined style={{ fontSize: '24px', color: 'yellow' }} />
-                        </Button>
-                        <Button height="45px" background="transparent" onClick={() => HandleSignUp("github")}>
-                            <span>Github</span>
-                            <GithubOutlined style={{ fontSize: '24px', color: 'green' }} />
-                        </Button>
+                        <GoogleAuth type="signup" />
+                        <FacebookAuth type="signup" />
+                        <LinkedinAuth type="signup" />
+                        <GithubAuth type="signup" />
                     </div>
                 </FormWrapper>
             </Container>
