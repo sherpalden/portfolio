@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import { Button } from "../../../components/atoms";
-import { FacebookOutlined, GithubOutlined, LinkedinOutlined } from "@ant-design/icons";
-import { FacebookAuth, GithubAuth, GoogleAuth, LinkedinAuth } from "../../../components/molecules";
+import { GoogleAuth } from "../../../components/molecules";
 
 const Wrapper = styled.div`
     height: 100vh;
@@ -40,10 +38,6 @@ const FormWrapper = styled.div`
     }
 `;
 
-const HandleSignUp = (key: string) => {
-    console.log(key)
-}
-
 const SignUp = () => {
     return (
         <Wrapper>
@@ -54,9 +48,6 @@ const SignUp = () => {
                     </div>
                     <div className="button-list">
                         <GoogleAuth type="signup" />
-                        <FacebookAuth type="signup" />
-                        <LinkedinAuth type="signup" />
-                        <GithubAuth type="signup" />
                     </div>
                 </FormWrapper>
             </Container>

@@ -26,26 +26,36 @@ export interface GoogleAuthProps {
 
 
 const GoogleAuth: React.FC<GoogleAuthProps> = (props) => {
-    const [auth2, setAuth2] = useState({})
+    const [isGoogleAuthLoaded, setIsGoogleAuthLoaded] = useState(false)
+
+    const handleCredentialResponse = (response: any) => {
+
+    }
 
     useEffect(() => {
-        window?.gapi?.load('auth2', () => {
-            const auth2 = window?.gapi?.auth2.init({
-                client_id: "352936315579-n8j9c0qe63m677g9fjt178821n0v4a0f.apps.googleusercontent.com",
-            })
-            setAuth2(auth2)
-        })
+        window.onload = () => {
+            google.accounts.id.initialize({
+                client_id: process.env.GOOGLE_WEB_CLIENT_ID,
+                callback: handleCredentialResponse,
+                context: "signup"
+            });
+            setIsGoogleAuthLoaded(true)
+        }
     }, [])
 
-    const HandleAuth = async (key: string) => {
-        if (key === "signup") {
-            const authResult = await auth2?.grantOfflineAccess();
-            console.log(authResult)
+    const handlePromptOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        if (isGoogleAuthLoaded) {
+            google.accounts.id.prompt((notification: any) => {
+                console.log(notification.isNotDisplayed())
+                console.log(notification.getNotDisplayedReason())
+            });
         }
     }
+
     return (
         <Wrapper>
-            <Button height="45px" background="transparent" onClick={() => HandleAuth(props.type)}>
+            <Button height="45px" background="transparent" onClick={handlePromptOpen}>
                 <span>Google</span>
                 <GoogleOutlined style={{ fontSize: '24px', color: 'red' }} />
             </Button>
