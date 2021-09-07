@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { GoogleOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import { Button } from "../../../atoms";
+import { API } from "../../../../api";
+import { notification } from "antd";
 
 const Wrapper = styled.div`
     & button {
@@ -23,19 +25,23 @@ export interface GoogleAuthProps {
     type: "login" | "signup";
 }
 
-
-
 const GoogleAuth: React.FC<GoogleAuthProps> = (props) => {
     const [isGoogleAuthLoaded, setIsGoogleAuthLoaded] = useState(false)
-
-    const handleCredentialResponse = (response: any) => {
-
+    const handleCredentialResponse = async (response: any) => {
+        try {
+            const res = await API.post("/api/auth/sign-up/", { credential: response.credential })
+            if (res && res.status == 200) {
+                notification.success({ "message": res.data.message })
+            }
+        } catch (error: any) {
+            notification.error({ "message": error?.response?.data?.message })
+        }
     }
 
     useEffect(() => {
         window.onload = () => {
             google.accounts.id.initialize({
-                client_id: process.env.GOOGLE_WEB_CLIENT_ID,
+                client_id: process.env.NEXT_PUBLIC_GOOGLE_WEB_CLIENT_ID,
                 callback: handleCredentialResponse,
                 context: "signup"
             });
@@ -46,10 +52,7 @@ const GoogleAuth: React.FC<GoogleAuthProps> = (props) => {
     const handlePromptOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         if (isGoogleAuthLoaded) {
-            google.accounts.id.prompt((notification: any) => {
-                console.log(notification.isNotDisplayed())
-                console.log(notification.getNotDisplayedReason())
-            });
+            google.accounts.id.prompt()
         }
     }
 

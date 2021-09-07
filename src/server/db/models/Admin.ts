@@ -1,7 +1,13 @@
 import mongoose from 'mongoose'
 
-export interface Admin extends mongoose.Document {
-    ID: string
+export interface IAdminMongo extends mongoose.Document {
+    _id: string
+    name: string
+    email: string
+}
+
+export interface IAdmin {
+    _id?: string
     name: string
     email: string
 }
@@ -11,4 +17,4 @@ const AdminSchema = new mongoose.Schema({
     email: { type: String, required: true },
 })
 
-export const Admins = mongoose.model('Admin', AdminSchema)
+export const Admin = mongoose.model('Admin', AdminSchema)

@@ -8,6 +8,7 @@ import {
 } from "../error"
 
 function onError(err: Error, req: NextApiRequest, res: NextApiResponse, next: any) {
+    console.log(err)
     if (
         err instanceof BadRequest ||
         err instanceof NotAuthorized ||

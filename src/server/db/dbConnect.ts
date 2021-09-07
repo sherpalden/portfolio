@@ -4,7 +4,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 
 if (!MONGODB_URI) {
     throw new Error(
-        'Please define the MONGODB_URI environment variable inside .env.local'
+        'Please define the MONGODB_URI environment variable inside .env'
     )
 }
 
@@ -37,7 +37,7 @@ async function dbConnect() {
                 return mongoose
             })
             .catch(error => {
-                console.log("Database coneection error:", error)
+                console.log("Database coneection error: ", error)
             })
     }
     cached.conn = await cached.promise
