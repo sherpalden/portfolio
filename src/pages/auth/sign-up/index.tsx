@@ -47,7 +47,7 @@ const SignUp = () => {
                         Sign Up With
                     </div>
                     <div className="button-list">
-                        <GoogleAuth type="signup" />
+                        <GoogleAuth authType="sign-up" />
                     </div>
                 </FormWrapper>
             </Container>

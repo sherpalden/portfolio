@@ -25,7 +25,20 @@ const getAdminByEmail = (email: string) => {
     })
 }
 
+const getAdminByID = (id: string) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            await dbConnect();
+            const admin = await Admin.findOne({ _id: id }).exec();
+            resolve(admin)
+        } catch (err) {
+            reject(err)
+        }
+    })
+}
+
 export default {
     createAdmin,
-    getAdminByEmail
+    getAdminByEmail,
+    getAdminByID
 }

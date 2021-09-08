@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { ExtendedRequest, ExtendedResponse } from '../interface/http'
 import {
     BadRequest,
     NotAuthorized,
@@ -7,7 +7,7 @@ import {
     Forbidden
 } from "../error"
 
-function onError(err: Error, req: NextApiRequest, res: NextApiResponse, next: any) {
+function onError(err: Error, req: ExtendedRequest, res: ExtendedResponse, next: any) {
     console.log(err)
     if (
         err instanceof BadRequest ||
@@ -25,7 +25,7 @@ function onError(err: Error, req: NextApiRequest, res: NextApiResponse, next: an
     res.status(500).json({ "message": err.message })
 }
 
-function onNoMatch(req: NextApiRequest, res: NextApiResponse) {
+function onNoMatch(req: ExtendedRequest, res: ExtendedResponse) {
     res.status(404).send({ "message": "Api route not found" });
 }
 

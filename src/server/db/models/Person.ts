@@ -44,10 +44,10 @@ export interface Person extends mongoose.Document {
 }
 
 const PersonSchema = new mongoose.Schema({
-    adminID: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Admin'},
+    adminID: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Admin' },
     name: { type: String, required: true },
     email: { type: String, required: true },
-    profilePic: {type: String}
+    profilePic: { type: String }
 })
- 
+
 export const Persons = mongoose.model('Person', PersonSchema)

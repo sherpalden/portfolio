@@ -22,14 +22,14 @@ const Wrapper = styled.div`
 `;
 
 export interface GoogleAuthProps {
-    type: "login" | "signup";
+    authType: "login" | "sign-up";
 }
 
 const GoogleAuth: React.FC<GoogleAuthProps> = (props) => {
     const [isGoogleAuthLoaded, setIsGoogleAuthLoaded] = useState(false)
     const handleCredentialResponse = async (response: any) => {
         try {
-            const res = await API.post("/api/auth/sign-up/", { credential: response.credential })
+            const res = await API.post(`/api/auth/${props.authType}/`, { credential: response.credential })
             if (res && res.status == 200) {
                 notification.success({ "message": res.data.message })
             }
