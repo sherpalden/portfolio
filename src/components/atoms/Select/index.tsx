@@ -95,19 +95,13 @@ const Label = styled.div`
 const SelectComponent = (props: ISelect) => {
   const {
     options,
-    clear,
-    suffix,
-    loading,
-    admin,
     label,
-    required,
-    hide,
-    native,
     onChange,
     name,
-    dark,
+    hide,
     value,
-    ...rest
+    height,
+    width,
   } = props;
 
   return (
@@ -121,7 +115,8 @@ const SelectComponent = (props: ISelect) => {
         <NativeSelect
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
           name={name}
-          {...rest}
+          width={width}
+          height={height}
         >
           {options &&
             options.map((option: any, index: number) =>

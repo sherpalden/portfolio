@@ -1,10 +1,12 @@
 import { dbConnect } from "../../db/dbConnect"
 import { Admin, IAdmin } from "../../db/models/Admin";
-
+import { InternalError } from "../../error"
 const createAdmin = (admin: IAdmin) => {
     return new Promise(async (resolve, reject) => {
         try {
             await dbConnect();
+            const admins = await Admin.find()
+            if (admins.length > 0) throw new InternalError("Internal server error")
             const newAdmin = await Admin.create(admin)
             resolve(newAdmin)
         } catch (err) {
