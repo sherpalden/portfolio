@@ -49,10 +49,8 @@ const loginAdmin = async (req: ExtendedRequest, res: ExtendedResponse, next: any
         const accessToken = await jwt.sign({ adminID: oldAdmin._id },
             String(process.env.ACCESS_TOKEN_SECRET), { expiresIn: '5000m' })
         res.status(200).json({
-            "message": "Admin create successful",
-            "data": {
-                "accessToken": accessToken
-            }
+            "message": "Admin login successful",
+            "accessToken": accessToken
         })
     } catch (err) {
         next(err)
@@ -61,6 +59,6 @@ const loginAdmin = async (req: ExtendedRequest, res: ExtendedResponse, next: any
 
 export default {
     createAdmin,
-    loginAdmin
+    loginAdmin,
 }
 

@@ -17,4 +17,4 @@ const AdminSchema = new mongoose.Schema({
     email: { type: String, required: true },
 })
 
-export const Admin = mongoose.model('Admin', AdminSchema)
+export const Admin = mongoose.models.Admin || mongoose.model('Admin', AdminSchema)

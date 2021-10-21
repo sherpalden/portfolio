@@ -3,7 +3,7 @@ const typographyH1 = {
   fontSize: "44px",
   lineHeight: "73px",
   letterSpacing: "0.04em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographyMap = {
@@ -11,7 +11,7 @@ const typographyMap = {
   fontSize: "14px",
   lineHeight: "30px",
   letterSpacing: "0.02em",
-  fontFamily: "Roboto, 'Noto Sans JP'",
+  fontFamily: "Monospace",
 };
 
 const typographyH2 = {
@@ -19,7 +19,7 @@ const typographyH2 = {
   fontSize: 30,
   lineHeight: "38px",
   letterSpacing: "0.04em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographyH2EN = {
@@ -27,7 +27,7 @@ const typographyH2EN = {
   fontSize: 18,
   lineHeight: "16px",
   letterSpacing: "0.05em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographyH3 = {
@@ -35,28 +35,28 @@ const typographyH3 = {
   fontWeight: "bold",
   lineHeight: "15px",
   letterSpacing: "0.04em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographyPrimary = {
   fontSize: 16,
   lineHeight: "30px",
   letterSpacing: "0.03em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 const typographyPrimaryBold = {
   fontSize: 16,
   lineHeight: "30px",
   fontWeight: "bold",
   letterSpacing: "0.03 em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographySecondary = {
   fontSize: 14,
   lineHeight: "20px",
   letterSpacing: "0.03em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographySecondaryBold = {
@@ -64,38 +64,38 @@ const typographySecondaryBold = {
   fontWeight: "bold",
   lineHeight: "20px",
   letterSpacing: "0.03em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographyTertiary = {
   fontSize: 11,
   lineHeight: "13px",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographyTertiaryBold = {
   fontSize: 11,
   lineHeight: "13px",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
   fontWeight: "bold",
 };
 const typographyTag = {
   fontSize: 11,
   lineHeight: "13px",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
   fontWeight: "normal",
 };
 const typographyMapTag = {
   fontSize: 12,
   lineHeight: "30px",
-  fontFamily: "Roboto,'Noto Sans JP'",
+  fontFamily: "Monospace",
   fontWeight: "bold",
 };
 
 const typographySelect = {
   fontSize: 16,
   lineHeight: "35px",
-  fontFamily: "'Noto Sans JP'",
+  fontFamily: "Monospace",
   fontWeight: 700,
   textAlign: "center",
 };
@@ -105,21 +105,21 @@ const typographyMB = {
   fontSize: 26,
   lineHeight: "28px",
   letterSpacing: "0.02em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const PackDesc = {
   fontWeight: 400,
   fontSize: "14px",
   lineHeight: "22px",
-  fontFamily: "'Noto Sans JP',sans-serif",
+  fontFamily: "Monospace",
 };
 
 const label = {
   fontWeight: 500,
   fontSize: "16px",
   lineHeight: "23.17px",
-  fontFamily: "'Noto Sans JP',sans-serif",
+  fontFamily: "Monospace",
 };
 
 const typographyMBH2 = {
@@ -127,11 +127,11 @@ const typographyMBH2 = {
   fontSize: 22,
   lineHeight: "35px",
   letterSpacing: "0.01em",
-  fontFamily: "Roboto",
+  fontFamily: "Monospace",
 };
 
 const typographyButton = {
-  fontFamily: "'Noto Sans JP'",
+  fontFamily: "Monospace",
   fontWeight: "700",
   fontSize: 20,
   lineHeight: "27px",
@@ -208,7 +208,7 @@ export const theme = {
   lightWhite: "#F3F4F8",
   gradientStart: "#70C439",
   gradientEnd: "#9AD364",
-  robotoFamily: "Roboto",
+  MonospaceFamily: "Monospace",
   notoSansFamily: "Noto Sans JP",
   typography: {
     typographyH1,

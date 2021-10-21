@@ -22,7 +22,7 @@ function onError(err: Error, req: ExtendedRequest, res: ExtendedResponse, next: 
         })
         return;
     }
-    res.status(500).json({ "message": err.message })
+    res.status(500).json({ "message": "Internal Server Error" })
 }
 
 function onNoMatch(req: ExtendedRequest, res: ExtendedResponse) {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { LinkedinOutlined } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
-import { Button } from "../../../atoms";
+import { Button } from "../../../atoms/Button";
 
 const Wrapper = styled.div`
     & button {

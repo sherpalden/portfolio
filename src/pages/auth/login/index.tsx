@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import RestrictedRoute from "../../../components/hoc/withRestrictedRoute";
 import { GoogleAuth } from "../../../components/molecules";
-
+import Head from "next/head"
 const Wrapper = styled.div`
     height: 100vh;
     width: 100%;
@@ -40,19 +41,23 @@ const FormWrapper = styled.div`
 
 const Login = () => {
     return (
-        <Wrapper>
-            <Container>
-                <FormWrapper>
-                    <div className="form-title">
-                        Login With
-                    </div>
-                    <div className="button-list">
-                        <GoogleAuth authType="login" />
-                    </div>
-                </FormWrapper>
-            </Container>
-        </Wrapper>
+        <>
+            <Head>
+            </Head>
+            <Wrapper>
+                <Container>
+                    <FormWrapper>
+                        <div className="form-title">
+                            Login With
+                        </div>
+                        <div className="button-list">
+                            <GoogleAuth authType="login" />
+                        </div>
+                    </FormWrapper>
+                </Container>
+            </Wrapper>
+        </>
     )
 }
 
-export default Login;
+export default RestrictedRoute(Login);
