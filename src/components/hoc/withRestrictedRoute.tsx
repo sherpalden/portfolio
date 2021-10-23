@@ -14,10 +14,10 @@ const LoaderWrapper = styled.div`
 const RestrictedRoute = (AuthComponent: any) => {
   function RestrictedComponent({ children }: { children: React.ReactNode }) {
     const { state } = useAuth();
-    const [accessToken, setAccessToken] = useState<any>("")
+    const [accessToken, setAccessToken] = useState<any>("");
 
     useEffect(() => {
-      setAccessToken(localStorage.getItem("accessToken"))
+      setAccessToken(localStorage.getItem("accessToken"));
       if (state.isAuthenticated || localStorage.getItem("accessToken")) {
         Router.push("/admin/");
       }
@@ -30,7 +30,7 @@ const RestrictedRoute = (AuthComponent: any) => {
         </LoaderWrapper>
       );
     }
-    return <>{(!state.isAuthenticated && !accessToken) && children}</>;
+    return <>{!state.isAuthenticated && !accessToken && children}</>;
   }
 
   return class Higher extends React.Component {

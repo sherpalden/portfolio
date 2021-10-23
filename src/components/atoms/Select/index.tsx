@@ -68,7 +68,7 @@ const NativeSelect = styled.select<ISelect>`
   text-indent: ${({ indent }: ISelect) => indent || "6px"};
   ::placeholder {
     color: ${({ placeholdercolor }) =>
-    (placeholdercolor && placeholdercolor) || theme.placeholder};
+      (placeholdercolor && placeholdercolor) || theme.placeholder};
     text-indent: ${({ indent }: ISelect) => indent || "6px"};
     vertical-align: middle;
   }
@@ -93,16 +93,7 @@ const Label = styled.div`
 `;
 
 const SelectComponent = (props: ISelect) => {
-  const {
-    options,
-    label,
-    onChange,
-    name,
-    hide,
-    value,
-    height,
-    width,
-  } = props;
+  const { options, label, onChange, name, hide, value, height, width } = props;
 
   return (
     <WrapperDiv $hide={hide}>
@@ -113,7 +104,9 @@ const SelectComponent = (props: ISelect) => {
       )}
       <NativeSelectWrapper>
         <NativeSelect
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange(e.target.value)
+          }
           name={name}
           width={width}
           height={height}
@@ -129,11 +122,7 @@ const SelectComponent = (props: ISelect) => {
                   {option.name}
                 </option>
               ) : (
-                <option
-                  key={index}
-                  value={option}
-                  selected={option === value}
-                >
+                <option key={index} value={option} selected={option === value}>
                   {option}
                 </option>
               )
@@ -141,7 +130,7 @@ const SelectComponent = (props: ISelect) => {
         </NativeSelect>
       </NativeSelectWrapper>
       {props.error && <Error>{props.error}</Error>}
-    </WrapperDiv >
+    </WrapperDiv>
   );
 };
 

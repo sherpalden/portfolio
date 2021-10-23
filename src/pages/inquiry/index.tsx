@@ -1,12 +1,7 @@
-import CustomerRoute from '../../components/hoc/withCustomerRoute'
+import CustomerRoute from "../../components/hoc/withCustomerRoute";
 
 const Inquiry = () => {
-    return (
-        <>
-            Hello from Inquiry page
-        </>
-    )
-}
+  return <>Hello from Inquiry page</>;
+};
 
 export default CustomerRoute(Inquiry);
-

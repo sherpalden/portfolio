@@ -1,12 +1,7 @@
-import CustomerRoute from '../../components/hoc/withCustomerRoute'
+import CustomerRoute from "../../components/hoc/withCustomerRoute";
 
 const Blogs = () => {
-    return (
-        <>
-            Hello from Blogs page
-        </>
-    )
-}
+  return <>Hello from Blogs page</>;
+};
 
 export default CustomerRoute(Blogs);
-

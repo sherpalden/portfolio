@@ -3,7 +3,7 @@ export const CharacterCounter = (str: string) => {
   let index;
   let width = 0;
   let len = 0;
-  for (index = 0; index < str.length;) {
+  for (index = 0; index < str.length; ) {
     point = str.codePointAt(index);
     width = 0;
     while (point) {

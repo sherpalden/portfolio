@@ -15,9 +15,8 @@ API.interceptors.request.use(
   async (axiosConfig) => {
     if (typeof sessionStorage !== "undefined") {
       if (sessionStorage.getItem("X-Agent-User")) {
-        axiosConfig.headers["X-Agent-User"] = sessionStorage?.getItem(
-          "X-Agent-User"
-        );
+        axiosConfig.headers["X-Agent-User"] =
+          sessionStorage?.getItem("X-Agent-User");
       }
     }
     const token = localStorage.getItem("accessToken");
@@ -42,9 +41,8 @@ FileAPI.interceptors.request.use(
   async (axiosConfig) => {
     if (typeof sessionStorage !== "undefined") {
       if (sessionStorage.getItem("X-Agent-User")) {
-        axiosConfig.headers["X-Agent-User"] = sessionStorage?.getItem(
-          "X-Agent-User"
-        );
+        axiosConfig.headers["X-Agent-User"] =
+          sessionStorage?.getItem("X-Agent-User");
       }
     }
     const token = localStorage.getItem("accessToken");

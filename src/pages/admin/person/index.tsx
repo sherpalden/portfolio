@@ -1,18 +1,18 @@
-import styled from 'styled-components'
-import { Controller, useForm, useFieldArray } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-import { PlusCircleFilled, DeleteOutlined } from '@ant-design/icons'
+import styled from "styled-components";
+import { Controller, useForm, useFieldArray } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { PlusCircleFilled, DeleteOutlined } from "@ant-design/icons";
 
-import AdminRoute from '../../../components/hoc/withAdminRoute'
-import PrivateRoute from '../../../components/hoc/withPrivateRoute'
-import { TextField } from '../../../components/atoms/TextField'
-import { SelectComponent } from '../../../components/atoms/Select'
-import { ButtonComponent as Button } from '../../../components/atoms/Button'
-import { theme } from '../../../theme'
-import React, { useEffect, useState } from 'react'
-import { notification } from 'antd'
-import { API } from '../../../api'
+import AdminRoute from "../../../components/hoc/withAdminRoute";
+import PrivateRoute from "../../../components/hoc/withPrivateRoute";
+import { TextField } from "../../../components/atoms/TextField";
+import { SelectComponent } from "../../../components/atoms/Select";
+import { ButtonComponent as Button } from "../../../components/atoms/Button";
+import { theme } from "../../../theme";
+import React, { useEffect, useState } from "react";
+import { notification } from "antd";
+import { API } from "../../../api";
 
 const Wrapper = styled.div`
   border: 1px solid green;
@@ -25,13 +25,13 @@ const Wrapper = styled.div`
     flex-direction: column;
     gap: 12px;
   }
-`
+`;
 
 const SaveButton = styled.div`
   margin-top: 36px;
   display: flex;
   justify-content: flex-end;
-`
+`;
 
 const Label = styled.div`
   ${theme.typography.label};
@@ -42,70 +42,70 @@ const Label = styled.div`
   margin-bottom: 5px;
   margin-right: 10px;
   font-weight: 500;
-`
+`;
 
 const FieldArrayItem = styled.div`
   display: flex;
   justify-content: flex-start;
   gap: 12px;
   align-items: center;
-`
+`;
 
 const socialMediaList = [
-  { value: 'facebook', name: 'facebook' },
-  { value: 'linkedin', name: 'linkedin' },
-  { value: 'twitter', name: 'twitter' },
-]
+  { value: "facebook", name: "facebook" },
+  { value: "linkedin", name: "linkedin" },
+  { value: "twitter", name: "twitter" },
+];
 
 const skillList = [
-  { value: 'mongodb', name: 'mongodb' },
-  { value: 'nodejs', name: 'nodejs' },
-  { value: 'react', name: 'react' },
-]
+  { value: "mongodb", name: "mongodb" },
+  { value: "nodejs", name: "nodejs" },
+  { value: "react", name: "react" },
+];
 
 const skillLevels = [
-  { value: 'begineer', name: 'begineer' },
-  { value: 'intermediate', name: 'intermediate' },
-  { value: 'advanced', name: 'advanced' },
-]
+  { value: "begineer", name: "begineer" },
+  { value: "intermediate", name: "intermediate" },
+  { value: "advanced", name: "advanced" },
+];
 
 const workPositionList = [
-  { value: 'manager', name: 'manager' },
-  { value: 'developer', name: 'developer' },
-  { value: 'qa', name: 'qa' },
-]
+  { value: "manager", name: "manager" },
+  { value: "developer", name: "developer" },
+  { value: "qa", name: "qa" },
+];
 
 const educationLevelList = [
-  { value: 'school', name: 'school' },
-  { value: 'high-school', name: 'high-school' },
-  { value: 'diploma', name: 'diploma' },
-  { value: 'bachelor-degree', name: 'bachelor-degree' },
-  { value: 'masters-degree', name: 'masters-degree' },
-]
+  { value: "school", name: "school" },
+  { value: "high-school", name: "high-school" },
+  { value: "diploma", name: "diploma" },
+  { value: "bachelor-degree", name: "bachelor-degree" },
+  { value: "masters-degree", name: "masters-degree" },
+];
 
 type FormData = {
-  name: string
-  email: string
-  phone: string
-  otherEmails: { email: string }[]
-  otherPhones: { phone: string }[]
-  socialMedias: { name: string; link: string }[]
-  skills: { name: string; level: string; experiencePeriod: string }[]
+  name: string;
+  email: string;
+  phone: string;
+  otherEmails: { email: string }[];
+  otherPhones: { phone: string }[];
+  socialMedias: { name: string; link: string }[];
+  skills: { name: string; level: string; experiencePeriod: string }[];
   educations: {
-    level: string
-    institute: string
-    fromDate: string
-    toDate: string
-    website: string
-  }[]
+    level: string;
+    institute: string;
+    fromDate: string;
+    toDate: string;
+    website: string;
+  }[];
   works: {
-    position: string
-    company: string
-    fromDate: string
-    toDate: string
-    website: string
-  }[]
-}
+    position: string;
+    company: string;
+    fromDate: string;
+    toDate: string;
+    website: string;
+  }[];
+};
 
 const validationSchema = yup.object({
   name: yup.string().required(),
@@ -113,12 +113,12 @@ const validationSchema = yup.object({
   phone: yup.string().required(),
   otherEmails: yup.array().of(
     yup.object({
-      email: yup.string().email('Invalid email'),
+      email: yup.string().email("Invalid email"),
     })
   ),
   otherPhones: yup.array().of(
     yup.object({
-      phone: yup.string().max(10, 'Cannot exceed 10 characters'),
+      phone: yup.string().max(10, "Cannot exceed 10 characters"),
     })
   ),
   socialMedias: yup.array().of(
@@ -152,78 +152,78 @@ const validationSchema = yup.object({
       website: yup.string().required(),
     })
   ),
-})
+});
 
 const Person = () => {
   const [personData, setPersonData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    otherEmails: [{ email: '' }],
-    otherPhones: [{ phone: '' }],
-    socialMedias: [{ name: '', link: '' }],
-    skills: [{ name: '', level: '', experiencePeriod: '' }],
+    name: "",
+    email: "",
+    phone: "",
+    otherEmails: [{ email: "" }],
+    otherPhones: [{ phone: "" }],
+    socialMedias: [{ name: "", link: "" }],
+    skills: [{ name: "", level: "", experiencePeriod: "" }],
     educations: [
       {
-        level: '',
-        institute: '',
-        fromDate: '',
-        toDate: '',
-        website: '',
+        level: "",
+        institute: "",
+        fromDate: "",
+        toDate: "",
+        website: "",
       },
     ],
     works: [
       {
-        position: '',
-        company: '',
-        fromDate: '',
-        toDate: '',
-        website: '',
+        position: "",
+        company: "",
+        fromDate: "",
+        toDate: "",
+        website: "",
       },
     ],
-  })
+  });
 
   const updatePersonData = (person: any) => {
     setPersonData({
-      name: person.name || '',
-      email: person.email || '',
-      phone: person.phone || '',
+      name: person.name || "",
+      email: person.email || "",
+      phone: person.phone || "",
       otherEmails: person.otherEmails || [],
       otherPhones: person.otherPhones || [],
       socialMedias: person.socialMedias || [],
       skills: person.skills || [],
       educations: person.educations || [],
       works: person.works || [],
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       try {
-        const res = await API.get('/api/person')
+        const res = await API.get("/api/person");
         if (res?.data?.data) {
-          updatePersonData(res.data.data)
+          updatePersonData(res.data.data);
         }
       } catch (error: any) {
         notification.error({
-          message: error?.response?.data?.message || 'Error occurred',
+          message: error?.response?.data?.message || "Error occurred",
           duration: 0,
-        })
+        });
       }
-    })()
-  }, [])
+    })();
+  }, []);
 
   useEffect(() => {
-    setValue('name', personData.name || '')
-    setValue('email', personData.email || '')
-    setValue('phone', personData.phone || '')
-    setValue('otherEmails', personData.otherEmails || [])
-    setValue('otherPhones', personData.otherPhones || [])
-    setValue('socialMedias', personData.socialMedias || [])
-    setValue('skills', personData.skills || [])
-    setValue('educations', personData.educations || [])
-    setValue('works', personData.works || [])
-  }, [personData])
+    setValue("name", personData.name || "");
+    setValue("email", personData.email || "");
+    setValue("phone", personData.phone || "");
+    setValue("otherEmails", personData.otherEmails || []);
+    setValue("otherPhones", personData.otherPhones || []);
+    setValue("socialMedias", personData.socialMedias || []);
+    setValue("skills", personData.skills || []);
+    setValue("educations", personData.educations || []);
+    setValue("works", personData.works || []);
+  }, [personData]);
 
   const {
     control,
@@ -233,70 +233,70 @@ const Person = () => {
   } = useForm<FormData>({
     resolver: yupResolver(validationSchema),
     defaultValues: personData,
-  })
+  });
   const {
     fields: emailFields,
     append: appendEmail,
     remove: removeEmail,
   } = useFieldArray({
     control,
-    name: 'otherEmails',
-  })
+    name: "otherEmails",
+  });
   const {
     fields: phoneFields,
     append: appendPhone,
     remove: removePhone,
   } = useFieldArray({
     control,
-    name: 'otherPhones',
-  })
+    name: "otherPhones",
+  });
   const {
     fields: socialMediaFields,
     append: appendSocialMedia,
     remove: removeSocialMedia,
   } = useFieldArray({
     control,
-    name: 'socialMedias',
-  })
+    name: "socialMedias",
+  });
   const {
     fields: skillFields,
     append: appendSkill,
     remove: removeSkill,
   } = useFieldArray({
     control,
-    name: 'skills',
-  })
+    name: "skills",
+  });
   const {
     fields: educationFields,
     append: appendEducation,
     remove: removeEducation,
   } = useFieldArray({
     control,
-    name: 'educations',
-  })
+    name: "educations",
+  });
   const {
     fields: workFields,
     append: appendWork,
     remove: removeWork,
   } = useFieldArray({
     control,
-    name: 'works',
-  })
+    name: "works",
+  });
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      const res = await API.put('/api/person', data)
+      const res = await API.put("/api/person", data);
       if (res?.data?.data) {
-        updatePersonData(res.data.data)
-        notification.success({ message: res.data.message })
+        updatePersonData(res.data.data);
+        notification.success({ message: res.data.message });
       }
     } catch (error: any) {
       notification.error({
-        message: error?.response?.data?.message || 'Error occurred',
+        message: error?.response?.data?.message || "Error occurred",
         duration: 0,
-      })
+      });
     }
-  })
+  });
 
   return (
     <Wrapper>
@@ -347,10 +347,10 @@ const Person = () => {
             Optional Emails
             <PlusCircleFilled
               onClick={() => {
-                appendEmail({ email: '' })
+                appendEmail({ email: "" });
               }}
               style={{
-                fontSize: '24px',
+                fontSize: "24px",
                 color: theme.line,
               }}
             />
@@ -373,15 +373,15 @@ const Person = () => {
                 />
                 <DeleteOutlined
                   onClick={() => {
-                    removeEmail(index)
+                    removeEmail(index);
                   }}
                   style={{
-                    fontSize: '24px',
+                    fontSize: "24px",
                     color: theme.red,
                   }}
                 />
               </FieldArrayItem>
-            )
+            );
           })}
         </div>
         <div>
@@ -389,10 +389,10 @@ const Person = () => {
             Optional Phones
             <PlusCircleFilled
               onClick={() => {
-                appendPhone({ phone: '' })
+                appendPhone({ phone: "" });
               }}
               style={{
-                fontSize: '24px',
+                fontSize: "24px",
                 color: theme.line,
               }}
             />
@@ -415,15 +415,15 @@ const Person = () => {
                 />
                 <DeleteOutlined
                   onClick={() => {
-                    removePhone(index)
+                    removePhone(index);
                   }}
                   style={{
-                    fontSize: '24px',
+                    fontSize: "24px",
                     color: theme.red,
                   }}
                 />
               </FieldArrayItem>
-            )
+            );
           })}
         </div>
         <div>
@@ -431,10 +431,10 @@ const Person = () => {
             Social Medias
             <PlusCircleFilled
               onClick={() => {
-                appendSocialMedia({ name: '', link: '' })
+                appendSocialMedia({ name: "", link: "" });
               }}
               style={{
-                fontSize: '24px',
+                fontSize: "24px",
                 color: theme.line,
               }}
             />
@@ -473,15 +473,15 @@ const Person = () => {
                 />
                 <DeleteOutlined
                   onClick={() => {
-                    removeSocialMedia(index)
+                    removeSocialMedia(index);
                   }}
                   style={{
-                    fontSize: '24px',
+                    fontSize: "24px",
                     color: theme.red,
                   }}
                 />
               </FieldArrayItem>
-            )
+            );
           })}
         </div>
         <div>
@@ -489,10 +489,10 @@ const Person = () => {
             Skills
             <PlusCircleFilled
               onClick={() => {
-                appendSkill({ name: '', level: '', experiencePeriod: '' })
+                appendSkill({ name: "", level: "", experiencePeriod: "" });
               }}
               style={{
-                fontSize: '24px',
+                fontSize: "24px",
                 color: theme.line,
               }}
             />
@@ -546,15 +546,15 @@ const Person = () => {
                 />
                 <DeleteOutlined
                   onClick={() => {
-                    removeSkill(index)
+                    removeSkill(index);
                   }}
                   style={{
-                    fontSize: '24px',
+                    fontSize: "24px",
                     color: theme.red,
                   }}
                 />
               </FieldArrayItem>
-            )
+            );
           })}
         </div>
         <div>
@@ -563,15 +563,15 @@ const Person = () => {
             <PlusCircleFilled
               onClick={() => {
                 appendEducation({
-                  level: '',
-                  institute: '',
-                  fromDate: '',
-                  toDate: '',
-                  website: '',
-                })
+                  level: "",
+                  institute: "",
+                  fromDate: "",
+                  toDate: "",
+                  website: "",
+                });
               }}
               style={{
-                fontSize: '24px',
+                fontSize: "24px",
                 color: theme.line,
               }}
             />
@@ -656,15 +656,15 @@ const Person = () => {
                 </div>
                 <DeleteOutlined
                   onClick={() => {
-                    removeEducation(index)
+                    removeEducation(index);
                   }}
                   style={{
-                    fontSize: '24px',
+                    fontSize: "24px",
                     color: theme.red,
                   }}
                 />
               </FieldArrayItem>
-            )
+            );
           })}
         </div>
         <div>
@@ -673,15 +673,15 @@ const Person = () => {
             <PlusCircleFilled
               onClick={() => {
                 appendWork({
-                  position: '',
-                  company: '',
-                  fromDate: '',
-                  toDate: '',
-                  website: '',
-                })
+                  position: "",
+                  company: "",
+                  fromDate: "",
+                  toDate: "",
+                  website: "",
+                });
               }}
               style={{
-                fontSize: '24px',
+                fontSize: "24px",
                 color: theme.line,
               }}
             />
@@ -766,15 +766,15 @@ const Person = () => {
                 </div>
                 <DeleteOutlined
                   onClick={() => {
-                    removeWork(index)
+                    removeWork(index);
                   }}
                   style={{
-                    fontSize: '24px',
+                    fontSize: "24px",
                     color: theme.red,
                   }}
                 />
               </FieldArrayItem>
-            )
+            );
           })}
         </div>
         <SaveButton>
@@ -784,7 +784,7 @@ const Person = () => {
         </SaveButton>
       </form>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default AdminRoute(PrivateRoute(Person))
+export default AdminRoute(PrivateRoute(Person));

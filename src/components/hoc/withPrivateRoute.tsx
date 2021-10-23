@@ -15,25 +15,25 @@ const LoaderWrapper = styled.div`
 const PrivateRoute = (AuthComponent: any) => {
   function PrivateComponent({ children }: { children: React.ReactNode }) {
     const { state } = useAuth();
-    const [accessToken, setAccessToken] = useState<any>(null)
+    const [accessToken, setAccessToken] = useState<any>(null);
     useEffect(() => {
       (async () => {
         try {
           if (localStorage.getItem("accessToken")) {
-            await API.post("/api/auth/check-admin")
-            setAccessToken(localStorage.getItem("accessToken"))
+            await API.post("/api/auth/check-admin");
+            setAccessToken(localStorage.getItem("accessToken"));
           } else {
             if (!state.isAuthenticated) {
-              localStorage.removeItem("accessToken")
+              localStorage.removeItem("accessToken");
               Router.push("/auth/login");
             }
           }
         } catch (error) {
           Router.push("/auth/login");
-          localStorage.removeItem("accessToken")
+          localStorage.removeItem("accessToken");
         }
       })();
-    }, [])
+    }, []);
 
     if (state.login.loading) {
       return (

@@ -1,5 +1,5 @@
 const HeaderLogo = () => {
-  return <></>
-}
+  return <></>;
+};
 
-export { HeaderLogo }
+export { HeaderLogo };

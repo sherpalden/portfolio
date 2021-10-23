@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import "antd/dist/antd.css";
-import '../styles.css';
+import "../styles.css";
 import { AuthProvider } from "../contexts/auth/AuthContext";
 import { API } from "../api";
 import { Loader } from "../components/molecules/Loader";

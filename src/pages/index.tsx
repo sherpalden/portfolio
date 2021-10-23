@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import CustomerRoute from '../components/hoc/withCustomerRoute'
+import Head from "next/head";
+import CustomerRoute from "../components/hoc/withCustomerRoute";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       </Head>
       <h1>Helo from home page</h1>
     </div>
-  )
-}
+  );
+};
 
 export default CustomerRoute(Home);

@@ -80,7 +80,6 @@ const NavItem = styled.div<{ current?: boolean }>`
 `;
 
 const BurgerWrapper = styled.div`
-
   padding: 12px;
   @media (min-width: 769px) {
     display: none;
@@ -112,14 +111,14 @@ const Header = () => {
                 <Link href="/services">Services</Link>
               </NavItem>
               <NavItem
-                current={router.pathname?.startsWith("/projects") ? true : false}
+                current={
+                  router.pathname?.startsWith("/projects") ? true : false
+                }
               >
                 <Link href="/projects">Projects</Link>
               </NavItem>
               <NavItem
-                current={
-                  router.pathname?.startsWith("/blogs") ? true : false
-                }
+                current={router.pathname?.startsWith("/blogs") ? true : false}
               >
                 <Link href="/blogs">Blogs</Link>
               </NavItem>
@@ -133,9 +132,7 @@ const Header = () => {
           </BurgerWrapper>
         </FlexContainer>
       </Container>
-      <MobileMenu
-        isOpen={mobileMenuOpen}
-      />
+      <MobileMenu isOpen={mobileMenuOpen} />
     </>
   );
 };

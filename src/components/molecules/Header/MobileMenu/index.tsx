@@ -15,7 +15,6 @@ const MenuWrapper = styled.div<{ open?: boolean }>`
   transition: all 0.3s linear;
   transform: ${({ open }) => (open ? "translateX(-0)" : "translateX(100%)")};
   background: #f3f4f8;
-
 `;
 const NavItems = styled.div`
   margin: 15px;
@@ -42,18 +41,10 @@ const MobileMenu: React.FC<IProps> = ({ isOpen }) => {
   return (
     <MenuWrapper open={isOpen}>
       <NavItems>
-        <NavItem href="/services">
-          Services
-        </NavItem>
-        <NavItem href="/projects">
-          Projects
-        </NavItem>
-        <NavItem href="/blogs">
-          Blogs
-        </NavItem>
-        <NavItem href="/inquiry">
-          Inquiry
-        </NavItem>
+        <NavItem href="/services">Services</NavItem>
+        <NavItem href="/projects">Projects</NavItem>
+        <NavItem href="/blogs">Blogs</NavItem>
+        <NavItem href="/inquiry">Inquiry</NavItem>
       </NavItems>
     </MenuWrapper>
   );

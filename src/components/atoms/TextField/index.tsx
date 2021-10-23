@@ -48,7 +48,7 @@ const InputStyled = styled(Input)`
   text-indent: ${({ indent }: TextFieldProps) => indent || "6px"};
   ::placeholder {
     color: ${({ placeholdercolor }) =>
-    (placeholdercolor && placeholdercolor) || theme.placeholder};
+      (placeholdercolor && placeholdercolor) || theme.placeholder};
     text-indent: ${({ indent }: TextFieldProps) => indent || "6px"};
     vertical-align: middle;
   }
@@ -127,10 +127,12 @@ const TextField: React.FC<TextFieldProps> = React.forwardRef((props, ref) => {
   const { TextArea } = Input;
   const countingUI = useCallback(() => {
     return (
-      showCounting && maxLength && (
+      showCounting &&
+      maxLength && (
         <CountingStyled isRed={value?.length >= maxLength}>
-          {`${value ? CharacterCounter(value) : 0
-            }/${maxLength.toLocaleString()}`}
+          {`${
+            value ? CharacterCounter(value) : 0
+          }/${maxLength.toLocaleString()}`}
         </CountingStyled>
       )
     );
