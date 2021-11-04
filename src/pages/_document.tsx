@@ -33,6 +33,21 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com/"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com/"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+            crossOrigin="anonymous"
+          />
           <script
             src="https://accounts.google.com/gsi/client"
             async

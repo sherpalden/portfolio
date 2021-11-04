@@ -14,8 +14,14 @@ const Container = styled.section`
   align-items: center;
   width: 100%;
   margin: auto;
+  padding-left: 72px;
+  padding-right: 72px;
   max-width: 100%;
-  background: white;
+  background: #000000;
+  @media (max-width: 768px) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 `;
 
 const FlexContainer = styled.div`
@@ -35,20 +41,29 @@ const LeftItems = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  max-width: 90px;
-  padding: 12px;
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
-  @media (max-width: 768px) {
-    max-width: 60px;
-  }
+  a {
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: bold;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
 `;
 
 const NavItems = styled.div`
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  & .nav-item {
+    margin-left: 24px;
+    :first-child {
+      margin-left: 0px;
+    }
+  }
+  :first-child {
+    margin-left: 0px;
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -58,7 +73,7 @@ const NavItem = styled.div<{ current?: boolean }>`
   ${(props) =>
     props.current &&
     css`
-      background: #f3f4f8;
+      background: #222222;
       border-radius: 100px;
     `}
   padding: 11px 18px 9px;
@@ -68,7 +83,7 @@ const NavItem = styled.div<{ current?: boolean }>`
     font-size: 15px;
     line-height: 20px;
     text-decoration: none;
-    color: black;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -99,34 +114,35 @@ const Header = () => {
         <FlexContainer>
           <LeftItems>
             <LogoWrapper>
-              <Link href="/">
-                <a>
-                  <img src={"/apple.png"} alt={"logo"} />
-                </a>
-              </Link>
+              <Link href="/">sherpalden</Link>
             </LogoWrapper>
-
-            <NavItems>
-              <NavItem current={router.pathname == "/services" ? true : false}>
-                <Link href="/services">Services</Link>
-              </NavItem>
-              <NavItem
-                current={
-                  router.pathname?.startsWith("/projects") ? true : false
-                }
-              >
-                <Link href="/projects">Projects</Link>
-              </NavItem>
-              <NavItem
-                current={router.pathname?.startsWith("/blogs") ? true : false}
-              >
-                <Link href="/blogs">Blogs</Link>
-              </NavItem>
-              <NavItem current={router.pathname == "/inquiry" ? true : false}>
-                <Link href="/inquiry">Inquiry</Link>
-              </NavItem>
-            </NavItems>
           </LeftItems>
+          <NavItems>
+            <NavItem
+              className="nav-item"
+              current={router.pathname == "/services" ? true : false}
+            >
+              <Link href="/services">Services</Link>
+            </NavItem>
+            <NavItem
+              className="nav-item"
+              current={router.pathname?.startsWith("/projects") ? true : false}
+            >
+              <Link href="/projects">Projects</Link>
+            </NavItem>
+            <NavItem
+              className="nav-item"
+              current={router.pathname?.startsWith("/blogs") ? true : false}
+            >
+              <Link href="/blogs">Blogs</Link>
+            </NavItem>
+            <NavItem
+              className="nav-item"
+              current={router.pathname == "/inquiry" ? true : false}
+            >
+              <Link href="/inquiry">Inquiry</Link>
+            </NavItem>
+          </NavItems>
           <BurgerWrapper>
             <BurgerCrossBtn open={mobileMenuOpen} setOpen={handleMenuClick} />
           </BurgerWrapper>

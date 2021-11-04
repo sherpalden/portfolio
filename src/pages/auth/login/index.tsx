@@ -5,7 +5,7 @@ import { GoogleAuth } from "../../../components/molecules";
 const Wrapper = styled.div`
   height: 100vh;
   width: 100%;
-  background-image: url("/star.gif");
+  background-image: url("/bg-black.png");
   background-size: cover;
   background-position: center;
   display: flex;

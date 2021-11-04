@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../theme";
 import { Header } from "../molecules/Header";
 
 const LayoutWrapper = styled.div`
@@ -8,8 +7,6 @@ const LayoutWrapper = styled.div`
   flex-direction: column;
 `;
 const BodyItems = styled.div`
-  background-color: ${theme.grey};
-  padding: 12px;
   min-height: 100vh;
 `;
 

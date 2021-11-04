@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const MenuWrapper = styled.div<{ open?: boolean }>`
   @media (min-width: 768px) {
@@ -14,12 +14,14 @@ const MenuWrapper = styled.div<{ open?: boolean }>`
   overflow-y: scroll;
   transition: all 0.3s linear;
   transform: ${({ open }) => (open ? "translateX(-0)" : "translateX(100%)")};
-  background: #f3f4f8;
+  background: #222222;
 `;
 const NavItems = styled.div`
   margin: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
 `;
 const NavItem = styled.a`
@@ -27,7 +29,7 @@ const NavItem = styled.a`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: black;
+  color: #ffffff;
   font-weight: 500;
   font-size: 20px;
   line-height: 29px;
