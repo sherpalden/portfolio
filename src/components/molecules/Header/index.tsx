@@ -46,7 +46,7 @@ const LogoWrapper = styled.div`
     font-size: 36px;
     color: #ffffff;
     font-weight: bold;
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       font-size: 24px;
     }
 `;
@@ -114,7 +114,7 @@ const Header = () => {
         <FlexContainer>
           <LeftItems>
             <LogoWrapper>
-              <Link href="/">sherpalden</Link>
+              <Link href="/">{`<sherpalden />`}</Link>
             </LogoWrapper>
           </LeftItems>
           <NavItems>
