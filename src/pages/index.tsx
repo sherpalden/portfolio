@@ -1,6 +1,7 @@
 import Head from "next/head";
 import CustomerRoute from "../components/hoc/withCustomerRoute";
 import { Banner } from "../components/molecules/Banner";
+import { Skills } from "../components/molecules/Skills";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner />
+      <Skills />
     </div>
   );
 };
