@@ -10,10 +10,10 @@ const sendEmail = async (emailOptions: IEmailOptions) => {
         auth: {
           type: "Oauth2",
           user: "sherpalden369@gmail.com",
-          clientId: process.env.GOOGLE_CLIENT_ID,
-          clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-          refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
-          accessToken: accessToken,
+          clientId: String(process.env.GOOGLE_CLIENT_ID),
+          clientSecret: String(process.env.GOOGLE_CLIENT_SECRET),
+          refreshToken: String(process.env.GOOGLE_REFRESH_TOKEN),
+          accessToken: String(accessToken),
         },
       });
       const result = await transport.sendMail(emailOptions);
