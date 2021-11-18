@@ -5,50 +5,47 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint-staged": "lint-staged",
-    "format": "eslint -c .eslintrc.js --ignore-path .eslintignore --fix",
-    "git-add": "git add .",
-    "prepare": "husky install",
-    "test": "npm run format"
+    "start": "next start"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.4",
+    "@hookform/resolvers": "^2.8.2",
+    "@hookstate/core": "^3.0.11",
     "antd": "^4.16.13",
     "axios": "^0.21.4",
+    "busboy": "^0.3.1",
     "google-auth-library": "^7.9.1",
+    "googleapis": "^89.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.4",
-    "next": "11.1.0",
+    "next": "^11.1.2",
     "next-connect": "^0.10.2",
+    "nodemailer": "^6.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "styled-components": "^5.3.0"
+    "react-hook-form": "^7.17.2",
+    "styled-components": "^5.3.0",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@types/busboy": "^0.2.4",
     "@types/jsonwebtoken": "^8.5.5",
     "@types/node": "^16.7.1",
+    "@types/nodemailer": "^6.4.4",
     "@types/react": "^17.0.19",
     "@types/styled-components": "^5.1.14",
-    "@typescript-eslint/eslint-plugin": "^4.29.2",
-    "@typescript-eslint/parser": "^4.29.2",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-styled-components": "^1.13.2",
-    "eslint": "^7.32.0",
-    "eslint-config-google": "^0.14.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-react": "^7.24.0",
-    "husky": "^7.0.0",
-    "prettier": "^2.3.2",
-    "typescript": "^4.3.5"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn stylelint",
-      "yarn format",
-      "git add"
-    ]
-  },
-  "pre-commit": [
-    "lint-staged"
-  ]
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
+    "typescript": "4.4.3"
+  }
 }

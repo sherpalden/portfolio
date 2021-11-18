@@ -52,12 +52,12 @@ const Wrapper = styled.div`
   & .ant-btn:hover,
   & .ant-btn:focus {
     background: ${({ background, hovercolor }: ButtonProps) => {
-    return (
-      hovercolor ||
-      background ||
-      `linear-gradient(90.14deg, ${theme.gradientStart} 38.9%, ${theme.gradientEnd} 100.96%)`
-    );
-  }};
+      return (
+        hovercolor ||
+        background ||
+        `linear-gradient(90.14deg, ${theme.gradientStart} 38.9%, ${theme.gradientEnd} 100.96%)`
+      );
+    }};
     border: none;
     color: white;
   }

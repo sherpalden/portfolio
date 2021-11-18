@@ -1,13 +1,11 @@
-import nc from "next-connect"
-import { onError, onNoMatch } from '../../../server/middleware/error';
+import nc from "next-connect";
+import { onError, onNoMatch } from "../../../server/middleware/error";
 import { adminAuth } from "../../../server/middleware/auth";
-import { ExtendedRequest, ExtendedResponse } from "../../../server/interface/http";
+import personCtrl from "../../../server/services/person/person.controller";
 
+const PersonHandler = nc({ onError, onNoMatch, attachParams: true })
+  .use(adminAuth)
+  .put(personCtrl.updatePerson)
+  .get(personCtrl.getPerson);
 
-const PersonHandler = nc({ onError, onNoMatch })
-    .use(adminAuth)
-    .get(async function (req: ExtendedRequest, res: ExtendedResponse) {
-        res.status(200).json({ "message": "Success auth middleware" })
-    })
-
-export default PersonHandler
+export default PersonHandler;
