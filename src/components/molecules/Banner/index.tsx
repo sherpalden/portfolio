@@ -7,6 +7,10 @@ const Wrapper = styled.div`
   width: 100%;
   height: auto;
   padding: 50px;
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const Title = styled.div`
