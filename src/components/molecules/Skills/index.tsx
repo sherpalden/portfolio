@@ -38,12 +38,52 @@ const Container = styled.div`
 
 const skillsList = [
   {
+    name: "Javascript",
+    level: 60,
+  },
+  {
     name: "NodeJS",
+    level: 50,
+  },
+  {
+    name: "Go",
     level: 30,
   },
   {
+    name: "HTML & CSS",
+    level: 60,
+  },
+  {
     name: "MySQL",
-    level: 90,
+    level: 50,
+  },
+  {
+    name: "PostgreSQL",
+    level: 40,
+  },
+  {
+    name: "MongoDB",
+    level: 50,
+  },
+  {
+    name: "NextJS",
+    level: 50,
+  },
+  {
+    name: "AWS",
+    level: 30,
+  },
+  {
+    name: "GCP",
+    level: 30,
+  },
+  {
+    name: "Docker",
+    level: 30,
+  },
+  {
+    name: "Git",
+    level: 50,
   },
 ];
 
