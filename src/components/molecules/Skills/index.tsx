@@ -4,7 +4,6 @@ import { Skill } from "../../atoms/Skill";
 const Wrapper = styled.div`
   background: #ffffff;
   width: 100%;
-  height: 1000px;
   padding: 50px;
   @media (max-width: 768px) {
     padding-left: 20px;
