@@ -8,7 +8,7 @@ import {
 
 const CheckAdmin = nc({ onError, onNoMatch })
   .use(adminAuth)
-  .post((req: ExtendedRequest, res: ExtendedResponse, next: any) => {
+  .post((req: ExtendedRequest, res: ExtendedResponse) => {
     res.status(200).json({
       message: "Valid admin",
     });

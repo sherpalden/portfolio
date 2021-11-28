@@ -33,6 +33,9 @@ const SkillWrapper = styled.div`
   @media (max-width: 600px) {
     min-width: 330px;
   }
+  @media (max-width: 400px) {
+    min-width: 270px;
+  }
 `;
 
 const Skill: React.FC<SkillProps> = ({ level, name }) => {

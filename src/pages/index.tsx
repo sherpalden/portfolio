@@ -2,6 +2,7 @@ import Head from "next/head";
 import CustomerRoute from "../components/hoc/withCustomerRoute";
 import { Banner } from "../components/molecules/Banner";
 import { Skills } from "../components/molecules/Skills";
+import { Projects } from "../components/molecules/Projects";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       </Head>
       <Banner />
       <Skills />
+      <Projects />
     </div>
   );
 };
