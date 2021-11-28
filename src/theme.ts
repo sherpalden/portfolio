@@ -208,6 +208,7 @@ export const theme = {
   lightWhite: "#F3F4F8",
   gradientStart: "#70C439",
   gradientEnd: "#9AD364",
+  gradientEndd: "#9AD364",
   MonospaceFamily: "Monospace",
   notoSansFamily: "Noto Sans JP",
   typography: {
