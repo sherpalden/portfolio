@@ -5,32 +5,32 @@ export interface TitleStyleOneProps {
 }
 
 const TitleStyleOneWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  @media (max-width: 768px) {
+    gap: unset;
+    flex-direction: column;
+    justify-content: center;
+  }
+  & .title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  & .styled-line {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    @media (max-width: 768px) {
-      gap: unset;
-      flex-direction: column;
-      justify-content: center;
+    div {
+      height: 3px;
+      width: 90px;
+      :first-child {
+        background: #ff7f50;
+      }
+      :nth-child(2) {
+        background: #9acd32;
+      }
     }
-    & .title {
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 400;
-    }
-    & .styled-line {
-        display: flex;
-        div {
-            height: 3px;
-            width: 90px;
-            :first-child {
-                background: #FF7F50;
-            }
-            :nth-child(2) {
-                background: #9ACD32;
-            }
-        }
-    }
+  }
 `;
 
 const TitleStyleOne: React.FC<TitleStyleOneProps> = ({ title }) => {

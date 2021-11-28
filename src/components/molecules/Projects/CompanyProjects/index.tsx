@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { TitleStyleOne } from "../../../atoms/TitleStyleOne"
-import { CardStyleOne } from "../../../atoms/CardStyleOne"
+import { TitleStyleOne } from "../../../atoms/TitleStyleOne";
+import { CardStyleOne } from "../../../atoms/CardStyleOne";
 
 const Wrapper = styled.div`
   background: #222222;
@@ -29,38 +29,36 @@ const Container = styled.div`
   }
 `;
 
-const ProjectWrapper = styled.div`
-  
-`;
+const ProjectWrapper = styled.div``;
 
 const projectLists = [
   {
     title: "Kenko-trend",
     link: "https://kenkou-trend.jp",
-    image: "/projects/kenko-trend.png"
+    image: "/projects/kenko-trend.png",
   },
   {
     title: "Behealth",
     link: "https://behealth.jp",
-    image: "/projects/behealth.png"
+    image: "/projects/behealth.png",
   },
-]
+];
 
 const CompanyProjects = () => {
   return (
     <Wrapper>
-      <TitleStyleOne title="COMPANY PROJECTS"/>
+      <TitleStyleOne title="COMPANY PROJECTS" />
       <Container>
         {projectLists.map((item, index) => {
           return (
             <ProjectWrapper key={`company-project-${index}`}>
-              <CardStyleOne 
+              <CardStyleOne
                 title={item.title}
                 link={item.link}
                 image={item.image}
               />
             </ProjectWrapper>
-          )
+          );
         })}
       </Container>
     </Wrapper>
