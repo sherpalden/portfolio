@@ -36,11 +36,14 @@ const projectLists = [
     title: "Kenko-trend",
     link: "https://kenkou-trend.jp",
     image: "/projects/kenko-trend.png",
+    summary: "",
   },
   {
     title: "Behealth",
     link: "https://behealth.jp",
     image: "/projects/behealth.png",
+    summary:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },
 ];
 
@@ -54,6 +57,7 @@ const CompanyProjects = () => {
             <ProjectWrapper key={`company-project-${index}`}>
               <CardStyleOne
                 title={item.title}
+                summary={item.summary}
                 link={item.link}
                 image={item.image}
               />
