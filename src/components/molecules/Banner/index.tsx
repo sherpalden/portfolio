@@ -76,13 +76,12 @@ const Banner = () => {
         </LeftContainer>
         <RightContainer>
           <div className="bio-container">
-            {`Hello, My name is Palden Sherpa. I don't believe in passion and
-            dreams. I just do things that i should do and that i like as well. I
-            feel myself as a worshipper of music. I have been experiencing
-            software industry since 2019 quite actively. I don't like solving
-            problems unless i have to. I don't know why but I wish everything
-            that exists to be unreal. Maybe because eventually all these
-            existence makes no sense.`}
+            {`Hi! I am Palden Sherpa. By profession, I am a software engineer specializing
+            in backend web development; however, I also possess plenty of skills in devops and
+            frontend development. I am always open to sharing ideas that helps make world a 
+            better place. I usually explore and listen to different genre of music in 
+            my spare time. At last but not the least, please feel free to contact me if you
+            have any queries or if i can help you in any ways.`}
           </div>
         </RightContainer>
       </Container>

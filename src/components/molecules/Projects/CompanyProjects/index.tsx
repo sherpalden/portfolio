@@ -2,17 +2,6 @@ import styled from "styled-components";
 import { TitleStyleOne } from "../../../atoms/TitleStyleOne";
 import { CardStyleOne } from "../../../atoms/CardStyleOne";
 
-const Wrapper = styled.div`
-  background: #222222;
-  border-radius: 12px;
-  width: 100%;
-  padding: 25px;
-  @media (max-width: 768px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-`;
-
 const Container = styled.div`
   max-width: 1200px;
   margin: auto;
@@ -36,17 +25,25 @@ const projectLists = [
     title: "Kenko-trend",
     link: "https://kenkou-trend.jp",
     image: "/projects/kenko-trend.png",
+    summary: `Kenko-trend(a health management application) is a platform where health companies 
+              can deliver services to the customers. Its main objective is to bring together many health 
+              companies with diversified and quality services into a common place: customers can subscribe
+              to all but most services on the fly without much overhead of finding the appropriate health 
+              company. Besides, the application also features health awareness through events, webinars, articles
+              and study materials.`,
   },
   {
     title: "Behealth",
     link: "https://behealth.jp",
     image: "/projects/behealth.png",
+    summary: `Behealth is an web application that exposes portfolio, events, webinars, articles 
+    and know how materials of the health management company called Behealth.`,
   },
 ];
 
 const CompanyProjects = () => {
   return (
-    <Wrapper>
+    <div>
       <TitleStyleOne title="COMPANY PROJECTS" />
       <Container>
         {projectLists.map((item, index) => {
@@ -54,6 +51,7 @@ const CompanyProjects = () => {
             <ProjectWrapper key={`company-project-${index}`}>
               <CardStyleOne
                 title={item.title}
+                summary={item.summary}
                 link={item.link}
                 image={item.image}
               />
@@ -61,7 +59,7 @@ const CompanyProjects = () => {
           );
         })}
       </Container>
-    </Wrapper>
+    </div>
   );
 };
 

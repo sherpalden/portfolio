@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CompanyProjects } from "./CompanyProjects";
+import { PersonalProjects } from "./PersonalProjects";
 
 const Wrapper = styled.div`
   background: #000000;
@@ -21,11 +22,28 @@ const Title = styled.div`
   text-align: center;
 `;
 
+const ProjectWrapper = styled.div`
+  background: #222222;
+  border-radius: 12px;
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+`;
+
 const Projects = () => {
   return (
     <Wrapper>
       <Title>My Works</Title>
-      <CompanyProjects />
+      <ProjectWrapper>
+        <CompanyProjects />
+        <PersonalProjects />
+      </ProjectWrapper>
     </Wrapper>
   );
 };
