@@ -2,17 +2,6 @@ import styled from "styled-components";
 import { TitleStyleOne } from "../../../atoms/TitleStyleOne";
 import { CardStyleOne } from "../../../atoms/CardStyleOne";
 
-const Wrapper = styled.div`
-  background: #222222;
-  border-radius: 12px;
-  width: 100%;
-  padding: 25px;
-  @media (max-width: 768px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-`;
-
 const Container = styled.div`
   max-width: 1200px;
   margin: auto;
@@ -54,7 +43,7 @@ const projectLists = [
 
 const CompanyProjects = () => {
   return (
-    <Wrapper>
+    <div>
       <TitleStyleOne title="COMPANY PROJECTS" />
       <Container>
         {projectLists.map((item, index) => {
@@ -70,7 +59,7 @@ const CompanyProjects = () => {
           );
         })}
       </Container>
-    </Wrapper>
+    </div>
   );
 };
 
