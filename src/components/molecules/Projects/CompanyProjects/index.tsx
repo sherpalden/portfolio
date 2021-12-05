@@ -36,14 +36,19 @@ const projectLists = [
     title: "Kenko-trend",
     link: "https://kenkou-trend.jp",
     image: "/projects/kenko-trend.png",
-    summary: "",
+    summary: `Kenko-trend(a health management application) is a platform where health companies 
+              can deliver services to the customers. Its main objective is to bring together many health 
+              companies with diversified and quality services into a common place: customers can subscribe
+              to all but most services on the fly without much overhead of finding the appropriate health 
+              company. Besides, the application also features health awareness through events, webinars, articles
+              and study materials.`,
   },
   {
     title: "Behealth",
     link: "https://behealth.jp",
     image: "/projects/behealth.png",
-    summary:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    summary: `Behealth is an web application that exposes portfolio, events, webinars, articles 
+    and know how materials of the health management company called Behealth.`,
   },
 ];
 

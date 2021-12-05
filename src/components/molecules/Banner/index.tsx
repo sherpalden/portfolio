@@ -77,7 +77,7 @@ const Banner = () => {
         <RightContainer>
           <div className="bio-container">
             {`Hi! I am Palden Sherpa. By profession, I am a software engineer specializing
-            in backend web development; however I also possess plenty of skills in devops and
+            in backend web development; however, I also possess plenty of skills in devops and
             frontend development. I am always open to sharing ideas that helps make world a 
             better place. I usually explore and listen to different genre of music in 
             my spare time. At last but not the least, please feel free to contact me if you

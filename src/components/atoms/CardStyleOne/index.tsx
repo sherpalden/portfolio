@@ -35,15 +35,17 @@ const CardStyleOneWrapper = styled.div`
     border-radius: 6px;
     font-size: 12px;
     padding: 6px;
+    height: 182px;
     font-weight: 400;
     color: #000000;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
     @media (max-width: 768px) {
-      -webkit-line-clamp: 9;
+      -webkit-line-clamp: unset;
+      height: auto;
     }
   }
 `;
