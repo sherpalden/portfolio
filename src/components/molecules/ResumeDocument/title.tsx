@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from "@react-pdf/renderer";
 import HrLine from "./hrline";
+import { font } from "./theme";
 
 // Create styles
 const styles = StyleSheet.create({
@@ -9,16 +10,17 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "black",
+    backgroundColor: "rgb(50,50,50)",
   },
   name: {
-    fontSize: 24,
+    fontSize: font.sizeH1,
+    fontWeight: font.weightBold,
     color: "white",
     marginBottom: 5,
   },
   position: {
     marginTop: 6,
-    fontSize: 9,
+    fontSize: font.sizeNormal,
     color: "white",
   },
 });
