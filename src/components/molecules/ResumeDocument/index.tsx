@@ -1,6 +1,9 @@
 import { Page, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
 import Contacts from "./contacts";
+import Educations from "./education";
+import Skills from "./skills";
 import ResumeTitle from "./title";
+import WorkExperiences from "./workExperience";
 
 Font.register({
   family: "Railway",
@@ -62,10 +65,13 @@ const ResumeDocument = () => {
         <View style={styles.wrapper}>
           <View style={styles.left}>
             <Contacts />
+            <Skills />
           </View>
           <View style={styles.middle}></View>
           <View style={styles.right}>
             <ResumeTitle />
+            <Educations />
+            <WorkExperiences />
           </View>
         </View>
       </Page>
