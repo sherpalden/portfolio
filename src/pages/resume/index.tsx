@@ -20,7 +20,7 @@ const Resume = () => {
   const [openPdf, setOpenPdf] = useState(false);
   return (
     <Wrapper>
-      <Button onClick={() => setOpenPdf(!openPdf)}>OpenPdf</Button>
+      <Button onClick={() => setOpenPdf(!openPdf)}>Download my resume</Button>
       {openPdf && (
         <PDFViewer width="100%" height="1000">
           <ResumeDocument />
