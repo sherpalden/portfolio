@@ -1,7 +1,10 @@
 import { Page, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
+import Certifications from "./certifications";
 import Contacts from "./contacts";
 import Educations from "./education";
+import MyProjects from "./myProjects";
 import Skills from "./skills";
+import Tests from "./tests";
 import ResumeTitle from "./title";
 import WorkExperiences from "./workExperience";
 
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
     marginLeft: 9,
     marginRight: 9,
     backgroundColor: "rgb(240, 240, 240)",
-    height: "100vh",
+    height: "1584px",
     width: 5,
   },
   right: {
@@ -66,12 +69,15 @@ const ResumeDocument = () => {
           <View style={styles.left}>
             <Contacts />
             <Skills />
+            <Certifications />
+            <Tests />
           </View>
           <View style={styles.middle}></View>
           <View style={styles.right}>
             <ResumeTitle />
             <Educations />
             <WorkExperiences />
+            <MyProjects />
           </View>
         </View>
       </Page>

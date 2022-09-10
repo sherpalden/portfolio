@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Link } from "@react-pdf/renderer";
+import { Text, View, StyleSheet } from "@react-pdf/renderer";
 import HrLine from "./hrline";
 import { font } from "./theme";
 
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 const skills = [
   {
     heading: "Programming Languages",
-    description: "Go, Javascript, Typescript, C++, HTML, & CSS",
+    description: "Go, Javascript, Typescript, Python, C++, HTML, & CSS",
   },
   {
     heading: "Frameworks",
@@ -51,7 +51,7 @@ const skills = [
   },
   {
     heading: "Others",
-    description: "Git, Docker, CircleCI, Firebase, Senty, JIRA",
+    description: "Git, Docker, CircleCI, Firebase, Sentry, JIRA",
   },
 ];
 

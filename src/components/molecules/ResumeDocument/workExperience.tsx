@@ -40,6 +40,14 @@ const styles = StyleSheet.create({
     fontSize: font.sizeNormal,
     fontWeight: font.weightSemiBold,
   },
+  itemTextLink: {
+    textDecoration: "underline",
+    color: "black",
+    marginTop: 3,
+    marginLeft: 3,
+    fontSize: font.sizeNormal,
+    fontWeight: font.weightMedium,
+  },
   itemDescription: {
     marginTop: 3,
     marginLeft: 3,
@@ -52,16 +60,17 @@ const experiences = [
   {
     position: "Software engineer/Team lead (full time)",
     institute: {
-      name: "Readytowork corp",
+      name: "Readytowork Co. Ltd.",
       website: "https://readytowork.jp/",
     },
     from: "Mar 2021",
     to: "Present",
     description:
-      "My responsibilities were: designing database, developing and implementing business logics,\
- implementing CICD, cloud infrastructure provisioning, sprint planning, task creation and division,\
- organizing daily meetings, daily reporting and communication with the project manager, team communication, etc.\
- \nThe tech stacks used were: Go, NextJS, MySQL, GCP, Docker, Circleci, Firebase, Sentry, & JIRA.",
+      "My responsibilities are: designing database, developing and implementing business logics,\
+ implementing CICD, provisioning cloud infrastructure, planning sprint (task division),\
+ organizing daily meetings, daily reporting and communication with the project manager and the team, etc.\
+ \nThe tech stacks are: Go, NextJS, MySQL, GCP, Docker, Circleci, Firebase, Sentry, & JIRA.\
+ \nWorked in health management, human resource management, & note keeping applications.",
   },
   {
     position: "Software engineer (part time)",
@@ -72,7 +81,9 @@ const experiences = [
     from: "Jun 2021",
     to: "Dec 2021",
     description:
-      "My responsibilities were: designing database, developing and implementing business logics, implementing CICD, cloud infrastructure provisioning, etc.\nThe tech stacks used were: NodeJS, PostgreSQL, docker, AWS, Gitlab.",
+      "My responsibilities were: designing database, developing and implementing business logics, implementing CICD, cloud infrastructure provisioning, etc.\
+  \nThe tech stacks used were: NodeJS, PostgreSQL, docker, AWS, Gitlab.\
+  \nWorked in ecommerce application.",
   },
   {
     position: "NodeJS Developer (full time)",
@@ -83,7 +94,9 @@ const experiences = [
     from: "Aug 2020",
     to: "Jan 2021",
     description:
-      "My responsibilities were: designing database, developing and implementing business logics, implementing CICD, cloud infrastructure provisioning, etc.\nThe tech stacks used were: NodeJS, MongoDB, socket.io, Redis, swagger, Gitlab.",
+      "My responsibilities were: designing database, developing and implementing business logics, implementing CICD, cloud infrastructure provisioning, etc.\
+  \nThe tech stacks used were: NodeJS, MongoDB, socket.io, Redis, swagger, Gitlab.\
+  \nWorked in social media application.",
   },
   {
     position: "Embedded System Intern (part time)",
@@ -94,7 +107,7 @@ const experiences = [
     from: "Jan 2019",
     to: "Jun 2019",
     description:
-      "My responsibilities were programming and interfacing STM32 series ARM based microcontrollers.",
+      "My responsibilities were programming and interfacing STM32 series ARM based micro-controllers. Worked in pitch detection of audio signal.",
   },
   {
     position: "Active member (part time)",
@@ -105,7 +118,7 @@ const experiences = [
     from: "2016",
     to: "2018",
     description:
-      "My responsibilities were programming and interfacing AVR microcontrollers and arduino.",
+      "My responsibilities were programming and interfacing AVR micro-controllers & PCB design and fabrication.",
   },
 ];
 
@@ -121,7 +134,7 @@ const WorkExperiences = () => {
               <Text style={styles.itemText}>{item.position}</Text>
               <Text style={styles.date}>{`${item.from} - ${item.to}`}</Text>
             </View>
-            <Link style={styles.itemText} src={item.institute.website}>
+            <Link style={styles.itemTextLink} src={item.institute.website}>
               {item.institute.name}
             </Link>
             <Text style={styles.itemDescription}>{item.description}</Text>

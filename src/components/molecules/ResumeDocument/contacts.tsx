@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Svg, Image } from "@react-pdf/renderer";
+import { Text, View, StyleSheet, Image, Link } from "@react-pdf/renderer";
 import HrLine from "./hrline";
 import { font } from "./theme";
 
@@ -23,6 +23,8 @@ const styles = StyleSheet.create({
   },
   itemText: {
     marginLeft: 6,
+    textDecoration: "none",
+    color: "black",
     fontSize: font.sizeSmall,
     fontWeight: font.weightMedium,
   },
@@ -46,14 +48,20 @@ const getIconWidth = (icon: string) => {
 const contactList = [
   {
     name: "linkedin",
-    link: "https://linkedin.com/in/palden",
+    link: "linkedin.com/in/palden",
     src: "/icons/linkedin.png",
     type: "link",
   },
   {
     name: "github",
-    link: "https://github.com/sherpalden",
+    link: "github.com/sherpalden",
     src: "/icons/github.png",
+    type: "link",
+  },
+  {
+    name: "medium",
+    link: "medium.com/@sherpalden369",
+    src: "/icons/medium.png",
     type: "link",
   },
   {
@@ -79,7 +87,9 @@ const Contacts = () => {
         return (
           <View style={styles.itemWrapper} key={item.name}>
             <Image src={item.src} style={{ width: getIconWidth(item.name) }} />
-            <Text style={styles.itemText}>{item.link}</Text>
+            <Link style={styles.itemText} src={`https://${item.link}`}>
+              {item.link}
+            </Link>
           </View>
         );
       })}
