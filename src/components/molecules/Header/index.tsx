@@ -120,6 +120,12 @@ const Header = () => {
           <NavItems>
             <NavItem
               className="nav-item"
+              current={router.pathname == "/resume" ? true : false}
+            >
+              <Link href="/resume">Resume</Link>
+            </NavItem>
+            <NavItem
+              className="nav-item"
               current={router.pathname == "/services" ? true : false}
             >
               <Link href="/services">Services</Link>
