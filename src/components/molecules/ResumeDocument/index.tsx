@@ -1,7 +1,9 @@
 import { Page, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
+import Achievements from "./achievements";
 import Certifications from "./certifications";
 import Contacts from "./contacts";
 import Educations from "./education";
+import Hobbies from "./hobbies";
 import MyProjects from "./myProjects";
 import Skills from "./skills";
 import Tests from "./tests";
@@ -71,6 +73,8 @@ const ResumeDocument = () => {
             <Skills />
             <Certifications />
             <Tests />
+            <Achievements />
+            <Hobbies />
           </View>
           <View style={styles.middle}></View>
           <View style={styles.right}>
