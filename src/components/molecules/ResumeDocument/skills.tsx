@@ -51,7 +51,7 @@ const skills = [
   },
   {
     heading: "Others",
-    description: "Git, Docker, CircleCI, Firebase, Sentry, JIRA",
+    description: "Git, Docker, NATS, gRPC, Microservices, CircleCI, Firebase, Sentry, JIRA",
   },
 ];
 

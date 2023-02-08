@@ -72,7 +72,7 @@ const ResumeDocument = () => {
             <Contacts />
             <Skills />
             <Certifications />
-            <Tests />
+            {/* <Tests /> */}
             <Achievements />
             <Hobbies />
           </View>

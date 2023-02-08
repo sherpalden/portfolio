@@ -58,15 +58,29 @@ const styles = StyleSheet.create({
 
 const experiences = [
   {
+    position: "Software engineer(full time)",
+    institute: {
+      name: "RARA Labs",
+      website: "https://www.raralabs.com/",
+    },
+    from: "Dec 2022",
+    to: "Present",
+    description:
+      "Working in SAAS ERP Application.\
+ \nThe tech stacks are: Go, PostgreSQL, NATS, AWS, Docker, Jenkins, and gRPC.\
+ \nMy current responsibilities are: refactoring and optimizing backend business logic.\
+ \n#Microservice #Multitenancy #SAAS.",
+  },
+  {
     position: "Software engineer/Team lead (full time)",
     institute: {
       name: "Readytowork Co. Ltd.",
       website: "https://readytowork.jp/",
     },
     from: "Mar 2021",
-    to: "Present",
+    to: "Dec 2022",
     description:
-      "My responsibilities are: designing database, developing and implementing business logics,\
+      "My responsibilities were: designing database, developing and implementing business logics,\
  implementing CICD, provisioning cloud infrastructure, planning sprint (task division),\
  organizing daily meetings, daily reporting and communication with the project manager and the team, etc.\
  \nThe tech stacks are: Go, NextJS, MySQL, GCP, Docker, Circleci, Firebase, Sentry, & JIRA.\

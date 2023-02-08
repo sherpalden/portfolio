@@ -5,7 +5,6 @@ import { font } from "./theme";
 // Create styles
 const styles = StyleSheet.create({
   wrapper: {
-    marginTop: 108,
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
