@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
+    marginTop: "18px",
   },
   title: {
     fontSize: font.sizeH2,
@@ -32,6 +33,13 @@ const styles = StyleSheet.create({
 });
 
 const myProjects = [
+  {
+    name: "Go SAAS Template",
+    website: "",
+    codeRepo: "https://github.com/sherpalden/go-saas-template",
+    description:
+      "SAAS implementation in Golang using PostgreSQL's Row Level Security(RLS)",
+  },
   {
     name: "GraphQL Skeleton in Go",
     website: "",
@@ -66,14 +74,6 @@ const myProjects = [
       "https://drive.google.com/drive/u/0/folders/1yoW3vxpxDOgh3gk412woCJ5AaGrWs2d2",
     description:
       "An undergraduate final year project required for the award of the Degree of Bachelor of Engineering in Electronics and Communication Engineering.",
-  },
-  {
-    name: "A 8-step step sequencer drum machine with keyboard",
-    demoLink: "https://youtu.be/-HsMJTeDAXg",
-    codeRepo:
-      "https://drive.google.com/drive/folders/1zRChQdULC4GLuOCBNrSEBCW3hvJ0LuKq",
-    description:
-      "An undergraduate minor(2nd year) project required for the award of the Degree of Bachelor of Engineering in Electronics and Communication Engineering.",
   },
 ];
 

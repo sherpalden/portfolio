@@ -33,7 +33,11 @@ const styles = StyleSheet.create({
 const tests = [
   {
     name: "GRE (312)",
-    description: "Overall score: 312(Quant: 163 & Verbal: 149), AWA: 4.0",
+    description: "Overall score: 312 (Quant: 163 & Verbal: 149), AWA: 4.0",
+  },
+  {
+    name: "IELTS (7)",
+    description: "Overall score: 7 (Speaking: 6, Reading: 7, Writing: 7, Listening: 8)",
   },
 ];
 

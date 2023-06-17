@@ -39,7 +39,7 @@ const skills = [
   },
   {
     heading: "Frameworks",
-    description: "Fx, Gin, NodeJS, ReactJS & NextJS",
+    description: "Fx, Gin, NodeJS, NestJS, ReactJS & NextJS",
   },
   {
     heading: "Databases",
@@ -51,7 +51,7 @@ const skills = [
   },
   {
     heading: "Others",
-    description: "Git, Docker, NATS, gRPC, Microservices, CircleCI, Firebase, Sentry, JIRA",
+    description: "Git, Docker, NATS, gRPC, Microservices, CircleCI, Firebase, Sentry, JIRA, UIUX, Figma",
   },
 ];
 

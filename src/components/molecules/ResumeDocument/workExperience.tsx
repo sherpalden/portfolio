@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 
 const experiences = [
   {
-    position: "Software engineer(full time)",
+    position: "Golang Developer",
     institute: {
       name: "RARA Labs",
       website: "https://www.raralabs.com/",
@@ -67,12 +67,12 @@ const experiences = [
     to: "Present",
     description:
       "Working in SAAS ERP Application.\
- \nThe tech stacks are: Go, PostgreSQL, NATS, AWS, Docker, Jenkins, and gRPC.\
+ \nThe tech stacks are: Go, PostgreSQL, NATS, AWS, Docker, Jenkins, gRPC, Javascript, and ReactJS.\
  \nMy current responsibilities are: refactoring and optimizing backend business logic.\
  \n#Microservice #Multitenancy #SAAS.",
   },
   {
-    position: "Software engineer/Team lead (full time)",
+    position: "Software engineer/Team lead",
     institute: {
       name: "Readytowork Co. Ltd.",
       website: "https://readytowork.jp/",
@@ -80,10 +80,10 @@ const experiences = [
     from: "Mar 2021",
     to: "Dec 2022",
     description:
-      "My responsibilities were: designing database, developing and implementing business logics,\
+      "My responsibilities were: designing database, developing and implementing business logics in both backend and frontend,\
  implementing CICD, provisioning cloud infrastructure, planning sprint (task division),\
  organizing daily meetings, daily reporting and communication with the project manager and the team, etc.\
- \nThe tech stacks are: Go, NextJS, MySQL, GCP, Docker, Circleci, Firebase, Sentry, & JIRA.\
+ \nThe tech stacks were: Go, ReactJS, NextJS, Figma, MaterialUI, Styled Components, Ant design, MySQL, GCP, Docker, Circleci, Firebase, Sentry, & JIRA.\
  \nWorked in health management, human resource management, & note keeping applications.",
   },
   {
@@ -100,7 +100,7 @@ const experiences = [
   \nWorked in ecommerce application.",
   },
   {
-    position: "NodeJS Developer (full time)",
+    position: "NodeJS Developer",
     institute: {
       name: "Web Bank Nepal, Kathmandu, Nepal",
       website: "https://www.webbanknepal.com/#gsc.tab=0",
@@ -124,7 +124,7 @@ const experiences = [
       "My responsibilities were programming and interfacing STM32 series ARM based micro-controllers. Worked in pitch detection of audio signal.",
   },
   {
-    position: "Active member (part time)",
+    position: "Active member",
     institute: {
       name: "Robotics and Automation Center, IOE Thapathali Campus, Kathmandu",
       website: "#",

@@ -76,6 +76,12 @@ const contactList = [
     src: "/icons/phone.png",
     type: "text",
   },
+  {
+    name: "d.o.b",
+    link: "dob: 31-10-1995, age: 27",
+    src: "",
+    type: "text",
+  },
 ];
 
 const Contacts = () => {
@@ -86,7 +92,12 @@ const Contacts = () => {
       {contactList.map((item) => {
         return (
           <View style={styles.itemWrapper} key={item.name}>
-            <Image src={item.src} style={{ width: getIconWidth(item.name) }} />
+            {item.src && (
+              <Image
+                src={item.src}
+                style={{ width: getIconWidth(item.name) }}
+              />
+            )}
             <Link style={styles.itemText} src={`https://${item.link}`}>
               {item.link}
             </Link>

@@ -9,6 +9,7 @@ import Skills from "./skills";
 import Tests from "./tests";
 import ResumeTitle from "./title";
 import WorkExperiences from "./workExperience";
+import ProfilePic from "./profilePic";
 
 Font.register({
   family: "Railway",
@@ -69,6 +70,7 @@ const ResumeDocument = () => {
       <Page size="A4" style={styles.page}>
         <View style={styles.wrapper}>
           <View style={styles.left}>
+            <ProfilePic />
             <Contacts />
             <Skills />
             <Certifications />

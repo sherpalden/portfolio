@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 const skills = [
   {
     heading: "Listening & singing songs",
-    youtube: "https://www.youtube.com/channel/UC36XDla7ixFhhpvvN9cXDbw",
+    youtube: "",
     description:
       "I love to listen all kinds of music. Music has always been best part of my life and will ever be.",
   },
